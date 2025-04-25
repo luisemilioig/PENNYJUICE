@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
     padding: 15px 30px; /* Slightly reduced padding */
     width: 100%;
-    white-space: 10px;
+    white-space: nowrap;
 }
 
 /* Logo Container */
