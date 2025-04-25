@@ -1,0 +1,1330 @@
+@charset "utf-8";
+
+/* FONT */
+@font-face {
+    font-family: 'Amboy Black', sans-serif; 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* BODY (INFINITE BACKGROUND) */
+body {  
+    min-height: 100vh;
+    background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
+    background-repeat: repeat;
+    margin: 0;
+    font-family: 'Amboy Black', sans-serif;
+}
+
+/* HEADER */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px; /* Slightly reduced padding */
+    width: 100%;
+    white-space: 10px;
+}
+
+/* Logo Container */
+#logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+/* Logo Background Image */
+#logo-container::before {
+    content: "";
+    position: absolute;
+    width: 120px; /* Adjust size */
+    height: 120px; /* Adjust size */
+    background: url('logo-bg.png') no-repeat center center; /* Replace with actual image */
+    background-size: contain;
+}
+
+/* Logo */
+#logo {
+    position: relative;
+    height: 100px; /* Adjust as needed */
+    z-index: 1; /* Ensures logo stays above background */
+}
+
+
+/* NAVIGATION MENU */
+#nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 12px 25px; /* Slightly reduced padding */
+    border-radius: 25px;
+    width: 60%;
+    margin: 0;
+}
+
+/* MAIN MENU */
+#nav ul {
+    display: flex;
+    gap: 15px;
+    padding: 14px 20px;
+    margin: 0;
+    list-style: none;
+}
+
+#nav li {
+    position: relative;
+    display: inline-block;
+}
+
+/* NAV LINKS */
+#nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover Effect: Yellow Glow */
+#nav a:hover {
+    color: black;
+    text-shadow: 0 0 10px #75CFEB, 0 0 20px #75CFEB; /* Glowing effect */
+}
+
+/* Click Effect: Yellow Background with White Text */
+#nav a:active {
+    background-color: yellow;
+    color: white;
+}
+/* Active Page Style */
+#nav .active-page {
+    background-color: #FFDE17;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 15px;
+}
+
+
+/* Small PNG Behind "Shop" Button */
+#shop-container::before {
+    content: "";
+    position: absolute;
+    top: -30px; /* Margin from the top */
+    left: -30px; /* Margin from the left */
+    width: 60px; /* Adjust size */
+    height: 60px; /* Adjust size */
+    background: url('greenstars1.png') no-repeat center center; /* Replace with actual image */
+    background-size: contain;
+    z-index: 1; /* Keeps image behind button */
+}
+
+/* MAIN MENU LINKS */
+#nav a {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 3px solid #FCB316;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #FCB316;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Amboy Black', sans-serif;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+#nav a:hover {
+    background: white;
+    color: #FCB316;
+}
+
+
+.submenu {
+    display: none !important;  /* Ensures it's hidden initially */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    background: transparent; /* No white box */
+    z-index: 1;
+}
+
+/* INDIVIDUAL SUBMENU BUBBLES */
+.submenu li {
+    background: white;
+    border-radius: 20px;
+    margin: 3px 0; /* Reduced space to fit text in one line */
+    padding: 5px 10px; /* Smaller padding for single-line */
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* SUBMENU LINKS */
+.submenu a {
+    display: block;
+    text-decoration: none;
+    font-family: 'Amboy Black', sans-serif;
+    color: #FCB316;
+    padding: 5px 8px; /* Smaller padding to keep one line */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* Ensures it stays on one line */
+}
+
+/* SUBMENU HOVER EFFECT */
+.submenu li:hover {
+    background: #FCB316;
+}
+
+.submenu li:hover a {
+    color: white;
+}
+
+/* ✅ ONLY SHOW SUBMENU ON HOVER ✅ */
+#nav li:hover > .submenu {
+    display: flex !important;  /* Ensures it appears on hover */
+    flex-direction: column;
+}
+
+/* USER ACTIONS (SEARCH, LOGIN, CART) */
+#user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+     margin-right: 60px;
+}
+
+/* BUTTONS */
+#cart-btn,
+#login-btn,
+#search-btn {
+    width: 110px;
+    padding: 10px 10px; 
+    margin-top: 0;
+    border: 4px solid #FCB316;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Amboy Black', sans-serif;
+    transition: all 0.3s ease;
+}
+/* SEARCH BUTTON */
+#search-btn {
+    position: relative;  /* Make sure the button itself is relative to ensure the ::before is positioned correctly */
+    border-radius: 5px;
+    color: #FCB316;
+    background: transparent;
+    margin-top: 20px;
+}
+
+#search-btn::before {
+    content: "";
+    position: absolute;
+    padding-bottom: 10%;
+    width: 80px; /* Adjust size */
+    height: 80px; /* Adjust size */
+    background: url('blue star.png') no-repeat center center; /* Replace with actual image */
+    background-size: contain;
+    z-index: -1; /* Places the image behind the button */
+}
+
+/* ROUNDED BUTTONS */
+#cart-btn,
+#login-btn {
+    border-radius: 20px;
+    color: #FCB316;
+    background: transparent;
+    margin-top: 20px;
+}
+
+#cart-btn:hover,
+#login-btn:hover {
+    background: white;
+    color: #FCB316;
+}
+
+/* SEARCH BUTTON */
+#search-btn {
+    border-radius: 5px;
+    color: #FCB316;
+    background: transparent;
+    margin-top: 20px;
+}
+
+#search-btn:hover {
+    background: white;
+    color: #FCB316;
+}
+
+
+/* SLIDER */
+#slider {
+    position: relative;
+    width: 80%;
+    height: 40vh;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SLIDES CONTAINER */
+#slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* INDIVIDUAL SLIDE */
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXT IN FRONT OF SLIDES */
+.slide-text {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    bottom:-20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    color: #FFDE17; /* Green text */
+    padding: 40px; /* Adds padding so text doesn't spill */
+    width: 90%; /* Keeps text inside the slide */
+    max-width: 400px; /* Prevents it from stretching too wide */
+    TEXT-shadow: 0px 0px 30px #8DC63F; /* Glowing effect */
+    border-radius: 15px; /* Soft rounded edges */
+}
+
+
+/* SLIDES CONTAINER */
+#slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* INDIVIDUAL SLIDE */
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+/* SLIDER BUTTONS */
+#prev-btn, #next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FD89B8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    background: darkorange;
+}
+
+/* POSITION SLIDER BUTTONS */
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    #slider {
+        width: 100%;
+        height: 35vh;
+    }
+
+    #nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+/* FLEX CONTAINER */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns first text at the top */
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Flex Container */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center; /* Centers content */
+}
+
+/* Group Mission Title and Description */
+.mission-group {
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
+    align-items: center; /* Center align both title and description */
+    justify-content: center;
+    gap: 10px; /* Adds space between title and description */
+    width: 25%;
+    max-width: 800px;
+    margin-bottom: 15px;
+}
+
+/* Title Text */
+.mission-title {
+    background: white;
+    border: 3px solid #39B54A;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #39B54A;
+    text-align: center;
+    width:90%;
+}
+
+/* Description Text */
+.mission-description {
+    background: white;
+    border: 3px solid #39B54A;
+    border-radius: 25px;
+    padding: 20px 20px;
+    font-size: 17px;
+    color: #39B54A;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+
+/* IMAGE CONTAINERS */
+.flex-container > div:nth-child(2),
+.flex-container > div:nth-child(3),
+.flex-container > div:nth-child(4) {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    height: 250px;
+    width: 20%;
+    display: flex;
+    align-items: flex-end; /* Positions text at the bottom */
+    justify-content: center;
+}
+
+/* BACKGROUND IMAGES */
+.flex-container > div:nth-child(2) { background-image: url('3cartonssquareoptimized.png'); }
+.flex-container > div:nth-child(3) { background-image: url('holdingfruitoptimized.png'); }
+.flex-container > div:nth-child(4) { background-image: url('storefinder1optimized.png'); }
+
+/* TEXT INSIDE IMAGE BOXES */
+.flex-container > div:nth-child(2) .image-text,
+.flex-container > div:nth-child(3) .image-text,
+.flex-container > div:nth-child(4) .image-text {
+     background: white;
+    color: #39B54A; /* Green text */
+    border: 3px solid #39B54A; /* Green border */
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; /* Adjust width based on text length */
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    max-width: 90%; /* Ensures it doesn’t stretch too wide */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    display: block; /* Ensures visibility */
+}
+.footer-container {
+    text-align: center;
+    padding: 20px;
+}
+.learn.html {
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+    
+    background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
+    padding: 40px 0;
+}
+.learn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+/* Grouping title, text, and image */
+.LEARN-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 22%;
+    max-width: 300px;
+    margin-bottom: 15px;
+}
+
+/* Title Styling */
+.LEARN-title {
+    background: white;
+    border: 3px solid #39B54A;
+    border-radius: 30px;
+    padding: 10px 0;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #39B54A;
+    text-align: center;
+    width: 90%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Description Styling */
+.LEARN-description {
+    padding: 20px;
+    font-size: 16px;
+    color: #FCB316;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Styling */
+.LEARN-image {
+    width: 90%;
+    height: auto;
+    border-radius: 20px; /* Rounded edges */
+    margin-top: 10px;
+}
+
+/* Hover Effects */
+.LEARN-title:hover,
+.LEARN-description:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .LEARN-group {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .LEARN-group {
+        width: 100%;
+    }
+}
+.footer-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.footer-menu li {
+    border: 2px solid #FFD700; /* Yellow border */
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #FFD700; /* Yellow text */
+    font-size: 16px;
+}
+
+.footer-menu li:hover {
+    background-color: #FFF8DC; /* Light cream hover */
+}
+
+.copyright {
+    color: #FFD700; /* Yellow text */
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Main Flex Container */
+.bestsellers-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.ingredients-page {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffbea;
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 5%;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* LEFT SIDE — INGREDIENTS SECTION */
+.ingredient-section {
+  flex: 1 1 400px;
+  background: linear-gradient(to bottom right, #ffffff, #FFDE17);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.ingredient-section:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+
+
+.ingredient-title {
+  font-size: 2rem;
+  color: #FCB316;
+  margin-bottom: 20px;
+}
+
+
+.ingredient-description {
+  font-size: 1.1rem;
+font-family: 'Overpass', sans-serif;
+  margin-bottom: 30px;
+  color: #9E9935;
+}
+
+.ingredient-columns {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.core-ingredients, .optional-additions {
+  flex: 1;
+    font-family: 'Overpass', sans-serif;
+  margin-bottom: 30px;
+  color: #9E9935;
+}
+    
+
+
+.core-ingredients h3,
+.optional-additions h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #FCB316;
+     font-family: 'Amboy Black', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.best-juices-title,
+.juice-packs-title {
+    background: white;
+    border: 4px solid #39B54A; /* Green border */
+    border-radius: 50px;
+    padding: 5PX 5px;
+    font-family: 'Overpass', sans-serif;
+    font-size: 20px;
+    color: #39B54A; /* Green text */
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+}
+.juice-packs-title :hover {
+    background: #39B54A;
+    color: white;
+}
+.best-juices-description {
+    font-size: 18px;
+    color: #FF8C00; /* Orange text */
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 20px;
+}
+/* Best Juices Section - Takes up 2/3 of the width */
+.best-juices-section {
+    width: 66.6%;
+    text-align: center;
+    padding: 20px;
+}
+.best-juices-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds spacing between images */
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+} 
+
+/* Juice Packs Section - Takes up 1/3 of the width */
+.juice-packs-section {
+    width: 33.3%;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Overpass', sans-serif;
+}
+
+/* Ensures Juice Pack Boxes Stay Side by Side */
+.juice-pack-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.juice-card {
+    position: relative;
+    width: 246px; /* Adjust as needed */
+    text-align: center;
+    font-family: 'Ambot', sans-serif;
+    margin: 10px; /* Space between cards */
+}
+
+.juice-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.juice-image {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+
+.juice-info {
+    position: absolute;
+    top: 15px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.juice-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Amboy Black', sans-serif;
+}
+
+.juice-ingredients {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 4px;
+    font-family: 'Overpass ', sans-serif;
+    margin-bottom: 200px;
+}
+
+.buy-btn {
+    display: block;
+    margin: 10px auto;
+    padding-top: 30px;
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 4px solid white;
+    background: transparent;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #FD89B8;
+    color: white;
+}
+
+
+/* Juice Pack Styling */
+.juice-pack-box {
+    width: 300px;
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.juice-pack-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+/* Juice Pack Image */
+.juice-pack-image {
+    width: 150%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Store Finder Section */
+.store-finder-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Background Image */
+.store-finder-bg {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+.store-finder-bg:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+
+/* Store Finder Button */
+.store-finder-btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #39B54A;
+    font-size: 18px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 3px solid #39B54A;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover Effect */
+.store-finder-btn:hover {
+    background: #39B54A;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .bestsellers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .best-juices-section, 
+    .juice-packs-section {
+        width: 100%;
+    }
+}
+
+/* Juice Card Styles */
+.juice-card {
+    position: relative;
+    width: 246px; /* Adjusted width for the card */
+    text-align: center;
+    font-family: 'Ambot', sans-serif;
+    margin: 10px; /* Space between cards */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.juice-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Image container */
+.juice-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.juice-image {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures images fit nicely in the container */
+}
+
+/* Juice info container */
+.juice-info {
+    position: absolute;
+    top: 15px; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 90%;
+    
+}
+
+/* Juice title and ingredients styling */
+.juice-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Amboy Black', sans-serif;
+}
+
+.juice-ingredients {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 4px;
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 190px; /* Adjusted margin to give space for the button */
+}
+
+/* Buy button */
+.buy-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 4px solid white;
+    background: transparent;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #FD89B8;
+    color: white;
+}
+
+/* Juice Pack Styling (optional section for another card variant) */
+.juice-pack-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+/* Juice Shop Section Styles */
+.juice-shop-section {
+    padding: 20px 20px;
+    text-align: center;
+    overflow-y: scroll; /* vertical scrolling */
+    height: 60vh;
+}
+
+
+.juice-shops-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: transparent;
+    margin-bottom: 10px;
+    font-family: 'Amboy Black', sans-serif;
+    color: #FD89B8;
+}
+
+.juice-shop-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-family: 'Amboy Black', sans-serif;
+    color: white;
+}
+
+
+/* Juice Shop Card Grid */
+.juice-shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /
+    column-gap: 20px; /* increased horizontal gap */
+    justify-content: center;
+    padding: 10px;
+    max-height: 100vh; 
+    overflow-y: auto; 
+}
+
+
+/* Juice Shop Card Styles */
+.juice-shop-card {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-family: 'Ambot', sans-serif;
+    padding: 20px; /* space inside the card */
+    margin: 20px; /* Space between cards */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.juice-shop-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+
+/* Image container */
+.juice-shop-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 20px ;
+    overflow: hidden;
+}
+
+.juice-shop-image {
+    width: 100%;
+    height: 400px; /* Adjust height if necessary */
+    object-fit: cover; /* Ensures images scale properly */
+    display: block;
+    border-radius: 10px;
+}
+
+.juice-shop-info {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+
+/* Juice Shop Title and Ingredients styling */
+.juice-shop-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Amboy Black', sans-serif;
+}
+.juice-shop-title:hover {
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+
+.juice-shop-ingredients {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 4px;
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 250px; /* Adjusted margin to give space for the button */
+}
+.juice-shop-ingredients:hover {
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+
+/* Juice Shop Buy Button */
+.juice-shop-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 4px solid white;
+    background: transparent;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.juice-shop-btn:hover {
+    background: #FD89B8;
+    color: white;
+}
+
+
+.blog-page {
+    font-family: 'Overpass', sans-serif;
+    padding: 20px 20px;
+}
+
+.blog-hero {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-title {
+    font-size: 36px;
+    color: #39B54A;
+    font-family: 'Amboy Black', sans-serif;
+    margin-bottom: 10px;
+}
+.blog-title2 {
+    font-size: 36px;
+    color: #FD89B8;
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 5px;
+}
+
+.blog-subtitle {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.blog-posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: inherit;
+    gap: 30px;
+}
+
+.blog-post-card {
+    width: 90%;
+    background: white;
+     margin: 0 auto; /* This centers it */
+    border: 2px solid #39B54A;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}.blogs-post-card {
+    width: 300px;
+    background: white;
+    border: 2px solid #39B54A;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.post-title {
+    font-size: 20px;
+    color: #39B54A;
+    margin-bottom: 10px;
+}
+
+.post-snippet {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: #FD89B8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+.share-heading {
+    color: #FCB316;
+    font-family: 'Amboy Black', sans-serif;
+    text-align: right;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.share-article-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end; /* Keeps it left-aligned */
+}
+
+.share-article-menu li {
+    border: 2px solid #FFD700; /* Yellow border */
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.share-article-menu a {
+    text-decoration: none;
+    color: #FFD700; /* Yellow text */
+    font-size: 16px;
+}
+
+.share-article-menu li:hover {
+    background-color: #FFF8DC; /* Light cream hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.read-more-btn {
+    
+    display: inline-block;
+    margin-top: 10px;
+    align-content: right;
+    padding: 10px 10px;
+    border: 2px solid #39B54A;
+    color: #39B54A;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #39B54A;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+.bottle-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap; /* Keep them in one row */
+    overflow-x: auto;  /* Enables scrolling if they overflow */
+    margin: 20px 0;
+}
+
+.bottle-card {
+    width: 250px; /* Keep cards narrow */
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.bottle-img {
+    width: 100%; /* Fill the card width */
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+.image-text {
+    margin-top: -35px;
+    background-color: rgba(57, 181, 74, 0.9); /* green overlay */
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.bottle-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #39B54A;
+    color: #39B54A;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.bottle-btn:hover {
+    background-color: #39B54A;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
