@@ -269,108 +269,116 @@ body {
 }
 
 
-/* SLIDER */
-#slider {
-    position: relative;
-    width: 80%;
-    height: 40vh;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
 }
 
-/* SLIDES CONTAINER */
-#slides {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
+/* Hide the radio-like anchors */
+[id^="slide"] {
+  display: none;
 }
 
-/* INDIVIDUAL SLIDE */
-.slide {
-    flex: 0 0 100%;
-    height: 100%;
-    position: relative;
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  color: #FFDE17;
+  font-size: 30px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Make the first visible by default */
+.item-1 {
+  z-index: -2;
+  opacity: 1;
+  background: url('slider.gif');
+  background-size: cover;
+  background-position: center;
 }
 
-/* TEXT IN FRONT OF SLIDES */
-.slide-text {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    bottom:-20%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 55px;
-    font-weight: bold;
-    color: #FFDE17; /* Green text */
-    padding: 40px; /* Adds padding so text doesn't spill */
-    width: 90%; /* Keeps text inside the slide */
-    max-width: 400px; /* Prevents it from stretching too wide */
-    TEXT-shadow: 0px 0px 30px #8DC63F; /* Glowing effect */
-    border-radius: 15px; /* Soft rounded edges */
+.item-2 {
+  background: url('holdingfruitoptimized.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.item-3 {
+  background: url('images penny/mainslideroptimized.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Target styles to reveal items */
+#slide-1:target ~ .item-1,
+#slide-2:target ~ .item-2,
+#slide-3:target ~ .item-3 {
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Arrows */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrow-prev {
+  left: -30px;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.arrow-next {
+  right: -30px;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.arrow:hover {
+  background: #39B54A;
+  border-color: white;
+}
+.cta-btn {
+  margin-top: 20px;
+  background-color: #39B54A;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #2e9940;
 }
 
 
-/* SLIDES CONTAINER */
-#slides {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
+/* Mobile fix */
+@media (max-width: 480px) {
+  .arrow {
+    padding: 10px;
+  }
 }
-
-/* INDIVIDUAL SLIDE */
-.slide {
-    flex: 0 0 100%;
-    height: 100%;
-    object-fit: cover;
-    max-width: 100%;
-}
-
-/* SLIDER BUTTONS */
-#prev-btn, #next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #FD89B8;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    font-size: 24px;
-    border-radius: 50%;
-    transition: 0.3s ease;
-}
-
-#prev-btn:hover, #next-btn:hover {
-    background: darkorange;
-}
-
-/* POSITION SLIDER BUTTONS */
-#prev-btn {
-    left: 10px;
-}
-
-#next-btn {
-    right: 10px;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    #slider {
-        width: 100%;
-        height: 35vh;
-    }
 
     #nav {
         flex-direction: column;
