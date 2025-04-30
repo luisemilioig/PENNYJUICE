@@ -155,7 +155,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: transparent; /* No white box */
-    z-index: 1;
+    z-index: 2;
 }
 
 /* INDIVIDUAL SUBMENU BUBBLES */
