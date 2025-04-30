@@ -112,7 +112,8 @@ body {
 /* Small PNG Behind "Shop" Button */
 #shop-container::before {
     content: "";
-    position: absolute;
+    position: relative;
+    z-index: 10; /* ensures nav is above carousel */
     top: -30px; /* Margin from the top */
     left: -30px; /* Margin from the left */
     width: 60px; /* Adjust size */
@@ -155,7 +156,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: transparent; /* No white box */
-    z-index: 2;
+    z-index: 11;
 }
 
 /* INDIVIDUAL SUBMENU BUBBLES */
@@ -274,8 +275,24 @@ body {
   position: relative;
   width: 1000px;
   margin: 0 auto;
-   z-index: -4;
+  z-index: 0; /* Changed from -4 to 0 */
 }
+
+.carousel-item {
+  z-index: 0; /* Ensure slides aren't blocking anything */
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  /* other styles remain unchanged */
+}
+
+/* Target styles to reveal items */
+#slide-1:target ~ .item-1,
+#slide-2:target ~ .item-2,
+#slide-3:target ~ .item-3 {
+  opacity: 1;
+  z-index: 1; /* Lift only the active slide slightly */
+}
+
 
 /* Hide the radio-like anchors */
 [id^="slide"] {
@@ -302,7 +319,7 @@ body {
 
 /* Make the first visible by default */
 .item-1 {
-  z-index: -4;
+  z-index: 1;
   opacity: 1;
   background: url('slider.gif');
   background-size: cover;
@@ -321,16 +338,9 @@ body {
   background-position: center;
 }
 
-/* Target styles to reveal items */
-#slide-1:target ~ .item-1,
-#slide-2:target ~ .item-2,
-#slide-3:target ~ .item-3 {
-  opacity: 1;
-  z-index: -3;
-}
-
 /* Arrows */
 .arrow {
+  z-index: 12; /* ensures arrows are always clickable */
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
