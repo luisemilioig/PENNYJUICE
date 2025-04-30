@@ -7,7 +7,72 @@
     <meta name="author" content="Luis Emilio Infante">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mystyle.css">
+      <style> 
+    form {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 25px;
+    background-color: white;
+    border: 3px solid #39B54A;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Amboy Black', sans-serif;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #39B54A;
+    outline: none;
+}
+
+form input[type="submit"] {
+    display: block;
+    background-color: white;
+    color: #39B54A;
+    border: 2px solid #39B54A;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px auto 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #39B54A;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Intro Title */
+intro h4 {
+    text-align: center;
+    color: #39B54A;
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}   
     
+    </style>
    </head>
 
 <body>
@@ -60,6 +125,24 @@
                 <button id="login-btn">Log In</button>
                 <button id="cart-btn">Cart</button>
             </div>
+           <div id="user-actions">
+                <button id="search-btn">Search</button>
+                <button id="login-btn">Log In</button>
+                <button id="cart-btn">Cart</button>
+            </div>
+        </header>
+         <intro><h4> Contact us and become a new costumer!</h4></intro>
+         <form action=*/action_page.php>
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" value="Luis Infante">
+            <label for="email">Your Email</label>
+            <input type="text" id="email" value="adress@domain.com">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" value="Enter Subject">
+            <label for="message">Your Message</label>
+            <input type="text" id="message" value="Type Your Message Here">
+            <input type="submit" value="submit">
+    </form>
         </header>
         <footer class="footer-container">
         <ul class="footer-menu">
