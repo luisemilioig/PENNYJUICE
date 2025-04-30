@@ -301,7 +301,7 @@ body {
 
 /* Make the first visible by default */
 .item-1 {
-  z-index: 2;
+  z-index: -4;
   opacity: 1;
   background: url('slider.gif');
   background-size: cover;
