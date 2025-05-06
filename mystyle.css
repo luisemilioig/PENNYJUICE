@@ -266,84 +266,6 @@ body {
     background: white;
     color: #FCB316;
 }
-
-
-.carousel-wrapper {
-  height: 400px;
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
-  z-index: 0; 
-}
-
-.carousel-item {
-  z-index: 0; /* Ensure slides aren't blocking anything */
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  /* other styles remain unchanged */
-
-  #slide-1:target ~ .item-1,
-#slide-2:target ~ .item-2,
-#slide-3:target ~ .item-3 {
-  opacity: 1;
-  z-index: 1;
-}
-
-}
-
-/* Target styles to reveal items */
-#slide-1:target ~ .item-1,
-#slide-2:target ~ .item-2,
-#slide-3:target ~ .item-3 {
-  opacity: 1;
-  z-index: 1; /* Lift only the active slide slightly */
-}
-
-
-/* Hide the radio-like anchors */
-[id^="slide"] {
-  display: none;
-}
-
-.carousel-item {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 25px 50px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  color: #FFDE17;
-  font-size: 30px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Make the first visible by default */
-.item-1 {
-  z-index: 1;
-  opacity: 1;
-  background: url('slider.gif');
-  background-size: cover;
-  background-position: center;
-}
-
-.item-2 {
-  background: url('holdingfruitoptimized.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.item-3 {
-  background: url('mainslideroptimized.png');
-  background-size: cover;
-  background-position: center;
-}
-
 /* Arrows */
 .arrow {
   z-index: 12; /* ensures arrows are always clickable */
@@ -372,36 +294,68 @@ body {
   background: #39B54A;
   border-color: white;
 }
-.cta-btn {
-  margin-top: 20px;
-  background-color: #39B54A;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 25px;
-  transition: background 0.3s ease;
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  z-index: 0; 
 }
 
-.cta-btn:hover {
-  background-color: #2e9940;
+/* Carousel Item Styles */
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  color: #FFDE17;
+  font-size: 30px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* Mobile fix */
-@media (max-width: 480px) {
-  .arrow {
-    padding: 10px;
-  }
+/* Carousel Items Background */
+.item-1 {
+  background: url('slider.gif');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 1;
 }
 
-    #nav {
-        flex-direction: column;
-        padding: 10px;
-    }
+.item-2 {
+  background: url('holdingfruitoptimized.png');
+  background-size: cover;
+  background-position: center;
 }
+
+.item-3 {
+  background: url('mainslideroptimized.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Make items visible when targeted */
+#slide-1:target ~ .item-1,
+#slide-2:target ~ .item-2,
+#slide-3:target ~ .item-3 {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Hide the anchors */
+[id^="slide"] {
+  display: none;
+}
+
 /* FLEX CONTAINER */
 .flex-container {
     display: flex;
