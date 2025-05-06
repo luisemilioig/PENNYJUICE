@@ -281,6 +281,14 @@ body {
   opacity: 0;
   transition: all 0.5s ease-in-out;
   /* other styles remain unchanged */
+
+  #slide-1:target ~ .item-1,
+#slide-2:target ~ .item-2,
+#slide-3:target ~ .item-3 {
+  opacity: 1;
+  z-index: 1;
+}
+
 }
 
 /* Target styles to reveal items */
