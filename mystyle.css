@@ -1,3 +1,11 @@
+/* Place @import at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+/* Now you can add other CSS rules */
+.learn.html {
+    background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
+    padding: 40px 0;
+}
 @charset "utf-8";
 
 font-face {
