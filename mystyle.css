@@ -1,487 +1,532 @@
-/* Place @import at the very top */
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
-
-/* Now you can add other CSS rules */
-.learn.html {
-    background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
-    padding: 40px 0;
-}
 @charset "utf-8";
-
-font-face {
-  font-family: 'Amboy Black';
-  src: url('fonts/AmboyBlack.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-body {  
-    min-height: 100vh;
-    background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
-    background-repeat: repeat;
-    margin: 0;
-    font-family: 'Amboy Black', sans-serif;
-}
-
-/* HEADER */
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px; 
-    width: 100%;
-    white-space: nowrap;
-}
-
-/* Logo Container */
-#logo-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-}
-
-/* Logo Background Image */
-#logo-container::before {
-    content: "";
-    position: absolute;
-    width: 120px; 
-    height: 120px; 
-    background: url('logo-bg.png') no-repeat center center; 
-    background-size: contain;
-}
-
-/* Logo */
-#logo {
-    position: relative;
-    height: 100px; 
-    z-index: 1;
-}
-
-
-/* NAVIGATION MENU */
-#nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    padding: 12px 25px; 
-    border-radius: 25px;
-    width: 60%;
-    margin: 0;
-}
-
-/* MAIN MENU */
-#nav ul {
-    display: flex;
-    gap: 15px;
-    padding: 14px 20px;
-    margin: 0;
-    list-style: none;
-}
-
-#nav li {
-    position: relative;
-    display: inline-block;
-}
-
-/* NAV LINKS */
-#nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-/* Hover Effect: Yellow Glow */
-#nav a:hover {
-    color: black;
-    text-shadow: 0 0 10px #75CFEB, 0 0 20px #75CFEB; /* Glowing effect */
-}
-
-/* Click Effect: Yellow Background with White Text */
-#nav a:active {
-    background-color: yellow;
-    color: white;
-}
-/* Active Page Style */
-#nav .active-page {
-    background-color: #FFDE17;
-    color: white;
-    border-radius: 25px;
-    padding: 8px 15px;
-}
-
-
-/* Small PNG Behind "Shop" Button */
-#shop-container::before {
-    content: "";
-    position: relative;
-    z-index: 10; /* ensures nav is above carousel */
-    top: -30px; /* Margin from the top */
-    left: -30px; /* Margin from the left */
-    width: 60px; 
-    height: 60px; 
-    background: url('greenstars1.png') no-repeat center center; 
-    background-size: contain;
-    z-index: 1; /* Keeps image behind button */
-}
-
-/* MAIN MENU LINKS */
-#nav a {
-    display: inline-block;
-    padding: 10px 18px;
-    border: 3px solid #FCB316;
-    border-radius: 20px;
-    font-size: 16px;
-    color: #FCB316;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Amboy Black', sans-serif;
-    transition: all 0.3s ease;
-    white-space: nowrap; /* Prevents text wrapping */
-}
-
-#nav a:hover {
-    background: white;
-    color: #FCB316;
-}
-
-
-.submenu {
-    display: none !important;  /* Ensures it's hidden initially */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    align-items: center;
-    background: transparent; /* No white box */
-    z-index: 11;
-}
-
-/* INDIVIDUAL SUBMENU BUBBLES */
-.submenu li {
-    background: white;
-    border-radius: 20px;
-    margin: 3px 0; /* Reduced space to fit text in one line */
-    padding: 5px 10px; /* Smaller padding for single-line */
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* SUBMENU LINKS */
-.submenu a {
-    display: block;
-    text-decoration: none;
-    font-family: 'Amboy Black', sans-serif;
-    color: #FCB316;
-    padding: 5px 8px; /* Smaller padding to keep one line */
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-align: center;
-    white-space: nowrap; /* Ensures it stays on one line */
-}
-
-/* SUBMENU HOVER EFFECT */
-.submenu li:hover {
-    background: #FCB316;
-}
-
-.submenu li:hover a {
-    color: white;
-}
-
-#nav li:hover > .submenu {
-    display: flex !important;  /* Ensures it appears on hover */
-    flex-direction: column;
-}
-
-/* USER ACTIONS (SEARCH, LOGIN, CART) */
-#user-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: auto;
-     margin-right: 60px;
-}
-
-/* BUTTONS */
-#cart-btn,
-#login-btn,
-#search-btn {
-    width: 110px;
-    padding: 10px 10px; 
-    margin-top: 0;
-    border: 4px solid #FCB316;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: 'Amboy Black', sans-serif;
-    transition: all 0.3s ease;
-}
-/* SEARCH BUTTON */
-#search-btn {
-    position: relative;  
-    border-radius: 5px;
-    color: #FCB316;
-    background: transparent;
-    margin-top: 20px;
-}
-
-#search-btn::before {
-    content: "";
-    position: absolute;
-    padding-bottom: 10%;
-    width: 80px; 
-    height: 80px; 
-    background: url('blue star.png') no-repeat center center; 
-    background-size: contain;
-    z-index: -1; 
-
-/* ROUNDED BUTTONS */
-#cart-btn,
-#login-btn {
-    border-radius: 20px;
-    color: #FCB316;
-    background: transparent;
-    margin-top: 20px;
-}
-
-#cart-btn:hover,
-#login-btn:hover {
-    background: white;
-    color: #FCB316;
-}
-
-/* SEARCH BUTTON */
-#search-btn {
-    border-radius: 5px;
-    color: #FCB316;
-    background: transparent;
-    margin-top: 20px;
-}
-
-#search-btn:hover {
-    background: white;
-    color: #FCB316;
-}
-/* Arrows */
-.arrow {
-  z-index: 12; /* ensures arrows are always clickable */
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 12px;
-  background: white;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.arrow-prev {
-  left: -30px;
-  transform: translateY(-50%) rotate(135deg);
-}
-
-.arrow-next {
-  right: -30px;
-  transform: translateY(-50%) rotate(-45deg);
-}
-
-.arrow:hover {
-  background: #39B54A;
-  border-color: white;
-}
-
-/* Carousel Wrapper */
-.carousel-wrapper {
-  height: 400px;
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
-  z-index: 0; 
-}
-
-/* Carousel Item Styles */
-.carousel-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 25px 50px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  color: #FFDE17;
-  font-size: 30px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Carousel Items Background */
-.item-1 {
-  background: url('slider.gif');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-  opacity: 1;
-}
-
-.item-2 {
-  background: url('holdingfruitoptimized.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.item-3 {
-  background: url('mainslideroptimized.png');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Make items visible when targeted */
-#slide-1:target ~ .item-1,
-#slide-2:target ~ .item-2,
-#slide-3:target ~ .item-3 {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Hide the anchors */
-[id^="slide"] {
-  display: none;
-}
-
-/* FLEX CONTAINER */
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Aligns first text at the top */
-    gap: 15px;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-/* Flex Container */
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px;
-    flex-wrap: wrap;
-    text-align: center; /* Centers content */
-}
-
-/* Group Mission Title and Description */
-.mission-group {
-    display: flex;
-    flex-direction: column; /* Stack title and description vertically */
-    align-items: center; /* Center align both title and description */
-    justify-content: center;
-    gap: 10px; /* Adds space between title and description */
-    width: 25%;
-    max-width: 800px;
-    margin-bottom: 15px;
-}
-
-/* Title Text */
-.mission-title {
-    background: white;
-    border: 3px solid #39B54A;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #39B54A;
-    text-align: center;
-    width:90%;
-}
-
-/* Description Text */
-.mission-description {
-    background: white;
-    border: 3px solid #39B54A;
-    border-radius: 25px;
-    padding: 20px 20px;
-    font-size: 17px;
-    color: #39B54A;
-    text-align: center;
-    width: 100%;
-    line-height: 1.5;
-    box-sizing: border-box;
-}
-
-
-/* IMAGE CONTAINERS */
-.flex-container > div:nth-child(2),
-.flex-container > div:nth-child(3),
-.flex-container > div:nth-child(4) {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    height: 250px;
-    width: 20%;
-    display: flex;
-    align-items: flex-end; /* Positions text at the bottom */
-    justify-content: center;
-}
-
-/* BACKGROUND IMAGES */
-.flex-container > div:nth-child(2) { background-image: url('3cartonssquareoptimized.png'); }
-.flex-container > div:nth-child(3) { background-image: url('holdingfruitoptimized.png'); }
-.flex-container > div:nth-child(4) { background-image: url('storefinder1optimized.png'); }
-
-/* TEXT INSIDE IMAGE BOXES */
-.flex-container > div:nth-child(2) .image-text,
-.flex-container > div:nth-child(3) .image-text,
-.flex-container > div:nth-child(4) .image-text {
+ 
+ font-face {
+   font-family: 'Amboy Black';
+   src: url('fonts/AmboyBlack.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
+ }
+ body {  
+     min-height: 100vh;
+     background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
+     background-repeat: repeat;
+     margin: 0;
+     font-family: 'Amboy Black', sans-serif;
+ }
+ 
+ /* HEADER */
+ #header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 30px; /* Slightly reduced padding */
+     padding: 15px 30px; 
+     width: 100%;
+     white-space: nowrap;
+ }
+ 
+ /* Logo Container */
+ #logo-container {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-right: 10px;
+ }
+ 
+ /* Logo Background Image */
+ #logo-container::before {
+     content: "";
+     position: absolute;
+     width: 120px; /* Adjust size */
+     height: 120px; /* Adjust size */
+     background: url('logo-bg.png') no-repeat center center; /* Replace with actual image */
+     width: 120px; 
+     height: 120px; 
+     background: url('logo-bg.png') no-repeat center center; 
+     background-size: contain;
+ }
+ 
+ /* Logo */
+ #logo {
+     position: relative;
+     height: 100px; /* Adjust as needed */
+     z-index: 1; /* Ensures logo stays above background */
+     height: 100px; 
+     z-index: 1;
+ }
+ 
+ 
+ /* NAVIGATION MENU */
+ #nav {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+     padding: 12px 25px; /* Slightly reduced padding */
+     padding: 12px 25px; 
+     border-radius: 25px;
+     width: 60%;
+     margin: 0;
+ }
+ 
+ /* MAIN MENU */
+ #nav ul {
+     display: flex;
+     gap: 15px;
+     padding: 14px 20px;
+     margin: 0;
+     list-style: none;
+ }
+ 
+ #nav li {
+     position: relative;
+     display: inline-block;
+ }
+ 
+ /* NAV LINKS */
+ #nav a {
+     text-decoration: none;
+     color: black;
+     font-weight: bold;
+     padding: 8px 15px;
+     border-radius: 10px;
+     transition: all 0.3s ease;
+     position: relative;
+ }
+ 
+ /* Hover Effect: Yellow Glow */
+ #nav a:hover {
+     color: black;
+     text-shadow: 0 0 10px #75CFEB, 0 0 20px #75CFEB; /* Glowing effect */
+ }
+ 
+ /* Click Effect: Yellow Background with White Text */
+ #nav a:active {
+     background-color: yellow;
+     color: white;
+ }
+ /* Active Page Style */
+ #nav .active-page {
+     background-color: #FFDE17;
+     color: white;
+     border-radius: 25px;
+     padding: 8px 15px;
+ }
+ 
+ 
+ /* Small PNG Behind "Shop" Button */
+ #shop-container::before {
+     content: "";
+     position: relative;
+     z-index: 10; /* ensures nav is above carousel */
+     top: -30px; /* Margin from the top */
+     left: -30px; /* Margin from the left */
+     width: 60px; /* Adjust size */
+     height: 60px; /* Adjust size */
+     background: url('greenstars1.png') no-repeat center center; /* Replace with actual image */
+     width: 60px; 
+     height: 60px; 
+     background: url('greenstars1.png') no-repeat center center; 
+     background-size: contain;
+     z-index: 1; /* Keeps image behind button */
+ }
+ 
+ /* MAIN MENU LINKS */
+ #nav a {
+     display: inline-block;
+     padding: 10px 18px;
+     border: 3px solid #FCB316;
+     border-radius: 20px;
+     font-size: 16px;
+     color: #FCB316;
+     text-transform: uppercase;
+     text-decoration: none;
+     font-family: 'Amboy Black', sans-serif;
+     transition: all 0.3s ease;
+     white-space: nowrap; /* Prevents text wrapping */
+ }
+ 
+ #nav a:hover {
      background: white;
-    color: #39B54A; /* Green text */
-    border: 3px solid #39B54A; /* Green border */
-    border-radius: 20px;
-    padding: 10px 15px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto; /* Adjust width based on text length */
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adds "..." if text is too long */
-    max-width: 90%; /* Ensures it doesn’t stretch too wide */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    display: block; /* Ensures visibility */
-}
-.footer-container {
-    text-align: center;
-    padding: 20px;
-}
-/* @import rule should be at the very top */
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
-
-/* Then you can define your styles */
-.learn.html {
-    background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
-    padding: 40px 0;
-}
-
+     color: #FCB316;
+ }
+ 
+ 
+ .submenu {
+     display: none !important;  /* Ensures it's hidden initially */
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     transform: translateX(-50%);
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     flex-direction: column;
+     align-items: center;
+     background: transparent; /* No white box */
+     z-index: 11;
+ }
+ 
+ /* INDIVIDUAL SUBMENU BUBBLES */
+ .submenu li {
+     background: white;
+     border-radius: 20px;
+     margin: 3px 0; /* Reduced space to fit text in one line */
+     padding: 5px 10px; /* Smaller padding for single-line */
+     transition: all 0.3s ease;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+     text-align: center;
+ }
+ 
+ /* SUBMENU LINKS */
+ .submenu a {
+     display: block;
+     text-decoration: none;
+     font-family: 'Amboy Black', sans-serif;
+     color: #FCB316;
+     padding: 5px 8px; /* Smaller padding to keep one line */
+     border-radius: 10px;
+     transition: all 0.3s ease;
+     text-align: center;
+     white-space: nowrap; /* Ensures it stays on one line */
+ }
+ 
+ /* SUBMENU HOVER EFFECT */
+ .submenu li:hover {
+     background: #FCB316;
+ }
+ 
+ .submenu li:hover a {
+     color: white;
+ }
+ 
+ /* ✅ ONLY SHOW SUBMENU ON HOVER ✅ */
+ #nav li:hover > .submenu {
+     display: flex !important;  /* Ensures it appears on hover */
+     flex-direction: column;
+ }
+ 
+ /* USER ACTIONS (SEARCH, LOGIN, CART) */
+ #user-actions {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-left: auto;
+      margin-right: 60px;
+ }
+ 
+ /* BUTTONS */
+ #cart-btn,
+ #login-btn,
+ #search-btn {
+     width: 110px;
+     padding: 10px 10px; 
+     margin-top: 0;
+     border: 4px solid #FCB316;
+     font-size: 14px;
+     text-transform: uppercase;
+     text-align: center;
+     font-family: 'Amboy Black', sans-serif;
+     transition: all 0.3s ease;
+ }
+ /* SEARCH BUTTON */
+ #search-btn {
+     position: relative;  /* Make sure the button itself is relative to ensure the ::before is positioned correctly */
+     position: relative;  
+     border-radius: 5px;
+     color: #FCB316;
+     background: transparent;
+     margin-top: 20px;
+ }
+ 
+ #search-btn::before {
+     content: "";
+     position: absolute;
+     padding-bottom: 10%;
+     width: 80px; /* Adjust size */
+     height: 80px; /* Adjust size */
+     background: url('blue star.png') no-repeat center center; /* Replace with actual image */
+     width: 80px; 
+     height: 80px; 
+     background: url('blue star.png') no-repeat center center; 
+     background-size: contain;
+     z-index: -1; /* Places the image behind the button */
+ }
+     z-index: -1; 
+ 
+ /* ROUNDED BUTTONS */
+ #cart-btn,
+ #login-btn {
+     border-radius: 20px;
+     color: #FCB316;
+     background: transparent;
+     margin-top: 20px;
+ }
+ 
+ #cart-btn:hover,
+ #login-btn:hover {
+     background: white;
+     color: #FCB316;
+ }
+ 
+ /* SEARCH BUTTON */
+ #search-btn {
+     border-radius: 5px;
+     color: #FCB316;
+     background: transparent;
+     margin-top: 20px;
+ }
+ 
+ #search-btn:hover {
+     background: white;
+     color: #FCB316;
+ }
+ 
+ 
+ .carousel-wrapper {
+   height: 400px;
+   position: relative;
+   width: 1000px;
+   margin: 0 auto;
+   z-index: 0; /* Changed from -4 to 0 */
+   z-index: 0; 
+ }
+ 
+ .carousel-item {
+   z-index: 0; /* Ensure slides aren't blocking anything */
+   opacity: 0;
+   transition: all 0.5s ease-in-out;
+   /* other styles remain unchanged */
+ }
+ 
+ /* Target styles to reveal items */
+ #slide-1:target ~ .item-1,
+ #slide-2:target ~ .item-2,
+ #slide-3:target ~ .item-3 {
+   opacity: 1;
+   z-index: 1; /* Lift only the active slide slightly */
+ }
+ 
+ 
+ /* Hide the radio-like anchors */
+ [id^="slide"] {
+   display: none;
+ }
+ 
+ .carousel-item {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   padding: 25px 50px;
+   opacity: 0;
+   transition: all 0.5s ease-in-out;
+   color: #FFDE17;
+   font-size: 30px;
+   text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ /* Make the first visible by default */
+ .item-1 {
+   z-index: 1;
+   opacity: 1;
+   background: url('slider.gif');
+   background-size: cover;
+   background-position: center;
+ }
+ 
+ .item-2 {
+   background: url('holdingfruitoptimized.png');
+   background-size: cover;
+   background-position: center;
+ }
+ 
+ .item-3 {
+   background: url('mainslideroptimized.png');
+   background-size: cover;
+   background-position: center;
+ }
+ 
+ /* Arrows */
+ .arrow {
+   z-index: 12; /* ensures arrows are always clickable */
+   border: solid black;
+   border-width: 0 3px 3px 0;
+   display: inline-block;
+   padding: 12px;
+   background: white;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   cursor: pointer;
+ }
+ 
+ .arrow-prev {
+   left: -30px;
+   transform: translateY(-50%) rotate(135deg);
+ }
+ 
+ .arrow-next {
+   right: -30px;
+   transform: translateY(-50%) rotate(-45deg);
+ }
+ 
+ .arrow:hover {
+   background: #39B54A;
+   border-color: white;
+ }
+ .cta-btn {
+   margin-top: 20px;
+   background-color: #39B54A;
+   color: white;
+   padding: 12px 24px;
+   border: none;
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 16px;
+   border-radius: 25px;
+   transition: background 0.3s ease;
+ }
+ 
+ .cta-btn:hover {
+   background-color: #2e9940;
+ }
+ 
+ 
+ /* Mobile fix */
+ @media (max-width: 480px) {
+   .arrow {
+     padding: 10px;
+   }
+ }
+ 
+     #nav {
+         flex-direction: column;
+         padding: 10px;
+     }
+ }
+ /* FLEX CONTAINER */
+ .flex-container {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start; /* Aligns first text at the top */
+     gap: 15px;
+     padding: 20px;
+     flex-wrap: wrap;
+ }
+ 
+ /* Flex Container */
+ .flex-container {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     gap: 15px;
+     padding: 20px;
+     flex-wrap: wrap;
+     text-align: center; /* Centers content */
+ }
+ 
+ /* Group Mission Title and Description */
+ .mission-group {
+     display: flex;
+     flex-direction: column; /* Stack title and description vertically */
+     align-items: center; /* Center align both title and description */
+     justify-content: center;
+     gap: 10px; /* Adds space between title and description */
+     width: 25%;
+     max-width: 800px;
+     margin-bottom: 15px;
+ }
+ 
+ /* Title Text */
+ .mission-title {
+     background: white;
+     border: 3px solid #39B54A;
+     border-radius: 25px;
+     padding: 10px 20px;
+     font-size: 20px;
+     font-weight: bold;
+     color: #39B54A;
+     text-align: center;
+     width:90%;
+ }
+ 
+ /* Description Text */
+ .mission-description {
+     background: white;
+     border: 3px solid #39B54A;
+     border-radius: 25px;
+     padding: 20px 20px;
+     font-size: 17px;
+     color: #39B54A;
+     text-align: center;
+     width: 100%;
+     line-height: 1.5;
+     box-sizing: border-box;
+ }
+ 
+ 
+ /* IMAGE CONTAINERS */
+ .flex-container > div:nth-child(2),
+ .flex-container > div:nth-child(3),
+ .flex-container > div:nth-child(4) {
+     position: relative;
+     background-size: cover;
+     background-position: center;
+     border-radius: 15px;
+     height: 250px;
+     width: 20%;
+     display: flex;
+     align-items: flex-end; /* Positions text at the bottom */
+     justify-content: center;
+ }
+ 
+ /* BACKGROUND IMAGES */
+ .flex-container > div:nth-child(2) { background-image: url('3cartonssquareoptimized.png'); }
+ .flex-container > div:nth-child(3) { background-image: url('holdingfruitoptimized.png'); }
+ .flex-container > div:nth-child(4) { background-image: url('storefinder1optimized.png'); }
+ 
+ /* TEXT INSIDE IMAGE BOXES */
+ .flex-container > div:nth-child(2) .image-text,
+ .flex-container > div:nth-child(3) .image-text,
+ .flex-container > div:nth-child(4) .image-text {
+      background: white;
+     color: #39B54A; /* Green text */
+     border: 3px solid #39B54A; /* Green border */
+     border-radius: 20px;
+     padding: 10px 15px;
+     font-size: 20px;
+     font-weight: bold;
+     text-align: center;
+     position: absolute;
+     bottom: 15px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: auto; /* Adjust width based on text length */
+     white-space: nowrap; /* Prevents text from wrapping */
+     overflow: hidden;
+     text-overflow: ellipsis; /* Adds "..." if text is too long */
+     max-width: 90%; /* Ensures it doesn’t stretch too wide */
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+     display: block; /* Ensures visibility */
+ }
+ .footer-container {
+     text-align: center;
+     padding: 20px;
+ }
+ .learn.html {
+     @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+ 
+     background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
+     padding: 40px 0;
+ }
 .learn-container {
     display: flex;
     flex-wrap: wrap;
