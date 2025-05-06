@@ -465,12 +465,15 @@ body {
     text-align: center;
     padding: 20px;
 }
+/* @import rule should be at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+/* Then you can define your styles */
 .learn.html {
-    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
-    
     background: linear-gradient(to top, #87CEFA 10%, rgba(255, 255, 255, 0.8) 40%, white 70%);
     padding: 40px 0;
 }
+
 .learn-container {
     display: flex;
     flex-wrap: wrap;
