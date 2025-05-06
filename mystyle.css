@@ -19,7 +19,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px; /* Slightly reduced padding */
+    padding: 15px 30px; 
     width: 100%;
     white-space: nowrap;
 }
@@ -37,17 +37,17 @@ body {
 #logo-container::before {
     content: "";
     position: absolute;
-    width: 120px; /* Adjust size */
-    height: 120px; /* Adjust size */
-    background: url('logo-bg.png') no-repeat center center; /* Replace with actual image */
+    width: 120px; 
+    height: 120px; 
+    background: url('logo-bg.png') no-repeat center center; 
     background-size: contain;
 }
 
 /* Logo */
 #logo {
     position: relative;
-    height: 100px; /* Adjust as needed */
-    z-index: 1; /* Ensures logo stays above background */
+    height: 100px; 
+    z-index: 1;
 }
 
 
@@ -58,7 +58,7 @@ body {
     align-items: center;
     position: relative;
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    padding: 12px 25px; /* Slightly reduced padding */
+    padding: 12px 25px; 
     border-radius: 25px;
     width: 60%;
     margin: 0;
@@ -116,9 +116,9 @@ body {
     z-index: 10; /* ensures nav is above carousel */
     top: -30px; /* Margin from the top */
     left: -30px; /* Margin from the left */
-    width: 60px; /* Adjust size */
-    height: 60px; /* Adjust size */
-    background: url('greenstars1.png') no-repeat center center; /* Replace with actual image */
+    width: 60px; 
+    height: 60px; 
+    background: url('greenstars1.png') no-repeat center center; 
     background-size: contain;
     z-index: 1; /* Keeps image behind button */
 }
@@ -192,7 +192,6 @@ body {
     color: white;
 }
 
-/* ✅ ONLY SHOW SUBMENU ON HOVER ✅ */
 #nav li:hover > .submenu {
     display: flex !important;  /* Ensures it appears on hover */
     flex-direction: column;
@@ -223,7 +222,7 @@ body {
 }
 /* SEARCH BUTTON */
 #search-btn {
-    position: relative;  /* Make sure the button itself is relative to ensure the ::before is positioned correctly */
+    position: relative;  
     border-radius: 5px;
     color: #FCB316;
     background: transparent;
@@ -234,12 +233,11 @@ body {
     content: "";
     position: absolute;
     padding-bottom: 10%;
-    width: 80px; /* Adjust size */
-    height: 80px; /* Adjust size */
-    background: url('blue star.png') no-repeat center center; /* Replace with actual image */
+    width: 80px; 
+    height: 80px; 
+    background: url('blue star.png') no-repeat center center; 
     background-size: contain;
-    z-index: -1; /* Places the image behind the button */
-}
+    z-index: -1; 
 
 /* ROUNDED BUTTONS */
 #cart-btn,
@@ -275,7 +273,7 @@ body {
   position: relative;
   width: 1000px;
   margin: 0 auto;
-  z-index: 0; /* Changed from -4 to 0 */
+  z-index: 0; 
 }
 
 .carousel-item {
